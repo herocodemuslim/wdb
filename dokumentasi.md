@@ -149,6 +149,7 @@ Terdapat 6 tingkat level penjudulan, sehingga layaknya menulis sebuah buku, seba
 ```
 
 3. Bold dan Italic atau Strong dan Emphasis
+```html
 <p>
 <b>Lorem ipsum</b> dolor, <i>sit amet</i> consectetur adipisicing elit. <strong>Quis consectetur</strong> delectus <em>quibusdam est</em> natus ex corrupti magnam dolorem ea cumque?
 </p>
@@ -262,3 +263,10 @@ Untuk menyisipkan gambar kita bisa menggunakan tag `<img>` ditambah dengan atrib
 Ada lagi atribut `alt` dimana digunakan untuk sebagai teks alternatif jika suatu saat gambar gagal dimuat karena suatu kendala ataupun untuk screenreader.
 
 Untuk membuat link, kita gunakan tag anchor `<a>`. Tidak cukup sampai disitu kita perlu atribut `href` dimana nilainya menentukan akan kemana link itu kita arahkan. Nilainya bisa mengarah ke halaman lain website kita, halaman di luar website kita misalnya instagram, facebook, dan lainnya ataupun alamat nya berupa file.
+
+---
+
+## 04 - Intermediate HTML
+### Objectives
+1. Mampu Membuat Table
+2. Mampu Membuat Form
