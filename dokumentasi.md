@@ -270,6 +270,7 @@ Untuk membuat link, kita gunakan tag anchor `<a>`. Tidak cukup sampai disitu kit
 ### Objectives
 1. Mampu Membuat Table
 2. Mampu Membuat Form
+<<<<<<< HEAD
 
 ### HTML Table
 Table digunakan untuk menampung suatu data yang digambarkan dalam bentuk baris dan kolom. Table tidak seharusnya digunakan untuk keperluan layout suatu website.
@@ -468,4 +469,3 @@ Akan tetapi, ada satu hal lagi yang perlu kita tambahkan, yaitu atribut `value` 
 ```
 
 Sebagai tambahan bahwa jika `<button>` adalah element terakhir dari suatu form, maka ia akan menjadi submit form.
-
