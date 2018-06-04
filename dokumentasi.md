@@ -149,6 +149,7 @@ Terdapat 6 tingkat level penjudulan, sehingga layaknya menulis sebuah buku, seba
 ```
 
 3. Bold dan Italic atau Strong dan Emphasis
+```html
 <p>
 <b>Lorem ipsum</b> dolor, <i>sit amet</i> consectetur adipisicing elit. <strong>Quis consectetur</strong> delectus <em>quibusdam est</em> natus ex corrupti magnam dolorem ea cumque?
 </p>
@@ -262,3 +263,209 @@ Untuk menyisipkan gambar kita bisa menggunakan tag `<img>` ditambah dengan atrib
 Ada lagi atribut `alt` dimana digunakan untuk sebagai teks alternatif jika suatu saat gambar gagal dimuat karena suatu kendala ataupun untuk screenreader.
 
 Untuk membuat link, kita gunakan tag anchor `<a>`. Tidak cukup sampai disitu kita perlu atribut `href` dimana nilainya menentukan akan kemana link itu kita arahkan. Nilainya bisa mengarah ke halaman lain website kita, halaman di luar website kita misalnya instagram, facebook, dan lainnya ataupun alamat nya berupa file.
+
+---
+
+## 04 - Intermediate HTML
+### Objectives
+1. Mampu Membuat Table
+2. Mampu Membuat Form
+
+### HTML Table
+Table digunakan untuk menampung suatu data yang digambarkan dalam bentuk baris dan kolom. Table tidak seharusnya digunakan untuk keperluan layout suatu website.
+
+```html
+<table>
+  <tr>
+    <th>Nama</th>
+    <th>Umur</th>
+    <th>Kursus</th>
+  </tr>
+
+  <tr>
+    <td>Fadli Hidayatullah</td>
+    <td>21</td>
+    <td>Fullstack JavaScript Development</td>
+  </tr>
+  <tr>
+    <td>Zaeru Steele</td>
+    <td>19</td>
+    <td>Front-End Development</td>
+  </tr>
+  <tr>
+    <td>Al Fatih Parker</td>
+    <td>25</td>
+    <td>DevOps Development</td>
+  </tr>
+</table>
+```
+
+Ketika dijalankan maka tidak ada border pada table layaknya table umumnya, untuk itu, kita bisa ubah kode `<table>` menjadi `<table border="1">`, tapi cara ini tidak seharusnya kita gunakan, untuk hal ini harusnya kita serahkan pada CSS.
+
+Kita sadari bahwa, antara `<tr>` atau table row untuk judul kolom dan datanya itu tidak ada bedanya, maka dari itu untuk membuat struktur table nya lebih baik lagi atau semantic, serta bermanfaat untuk screen reader nantinya. Sehingga bisa dibedakan antara konten dan heading table nya.
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>Umur</th>
+      <th>Kursus</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Fadli Hidayatullah</td>
+      <td>21</td>
+      <td>Fullstack JavaScript Development</td>
+    </tr>
+    <tr>
+      <td>Zaeru Steele</td>
+      <td>19</td>
+      <td>Front-End Development</td>
+    </tr>
+    <tr>
+      <td>Al Fatih Parker</td>
+      <td>25</td>
+      <td>DevOps Development</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+### HTML Forms
+Kita membuat form pada HTML dengan menggunakan tag `<form>` dimana ia hanya sebagai kontainer yang menampung input-input suatu form.
+
+Terdapat dua atribut utama yang perlu dibahas pada tag ini, yaitu atribut `action` dan `method`. Kita akan belajar lebih detail saat belajar Back-end.
+
+```html
+
+<form action="location-to-send-to" method="POST">
+	<!-- input controls disini -->
+</form>
+```
+
+`action` adalah atribut yang berisikan nilai server atau file yang akan mengelola hasil submitan dari form tersebut, bisa berupa mengambil data ataupun memasukkan data. Sedangkan, `method` adalah tipe HTTP yang digunakan. Biasanya, ketika kita sedang mengambil data dari database kita gunakan metode GET, sedangkan untuk memasukkan data kita gunakan metode POST. 
+
+Ketika menggunakan metode GET, maka kita akan bisa, nilai dari form nya pada URL, sedangkan POST akan disembunyikan, karena umumnya GET untuk data yang tidak sensitif, sedangkan POST untuk data yang sensitif atau sering ketika kita melakukan pendataan.
+
+Untuk melihat daftar input-input pada HTML, bisa dilihat di link berikut: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
+
+Perlu diketahui, jika kita hanya memiliki input seperti berikut: 
+
+```html
+<input type="text" placeholder="Username">
+<input type="email" placeholder="Alamat Email">
+<input type="password" placeholder="Password">
+<input type="submit" value="Daftar">
+```
+
+Maka, sebenarnya memiliki input yang tidak saling berhubungan karena kita tidak membungkus nya di dalam tag form. Meskipun, nanti ada saat dimana kita tidak memasukkannya kedalam tag form.
+
+```html
+	<h3>Daftar Gratis Sekarang!</h3>
+	
+	<form>
+		<input name="username" type="text" placeholder="Username">
+		<input name="email" type="email" placeholder="Alamat Email">
+		<input name="password" type="password" placeholder="Password">
+		<input type="submit" value="Daftar">
+	</form>
+
+```
+
+Bila kita tidak menetapkan atribut action dan method nya, maka nilai default nya adalah data akan dikirim ke halaman itu sendiri dan metodenya adalah `get`. 
+
+Ketika kita men-submit sebuah form, tentunya informasi input dari form tersebut juga akan dikirim. Atribut `name` kita gunakan untuk membuat variable yang memiliki nilai inputnya itu sendiri yang nantinya datanya bisa kita ambil saat memproses datanya di back-end.
+
+Agar form yang kita buat semakin baik aksesibilitas nya, misalnya ada orang yang visually impair, maka mereka bisa mengenali inputan yang ada pada form kita. Kita bisa gunakan tag `<label>` untuk melakukannya, dimana ada dua cara penulisan agar input dan caption atau label nya memiliki koneksi.
+
+```html
+<!-- Versi 1 -->
+<h3>Sign In</h3>
+<form>
+	<label>
+		Username:
+		<input name="username" type="text">
+	</label>
+	<br>
+	<label>
+		Password:
+		<input name="password" type="password">
+	</label>
+	<br>
+	<button type="submit">Sign in</button>
+</form>
+
+<!-- Versi 2 -->
+	<h3>Sign In</h3>
+	<form>
+		<label for="username">Username</label>
+		<input id="username" type="text">
+		<br>
+		<label for="password">Username</label>
+		<input id="password" type="password">
+		<br>
+		<input type="submit">
+	</form>
+```
+
+#### Simple Validations
+Selanjutnya, kita akan belajar validasi form sederhana menggunakan HTML, tentu untuk validasi yang lebih advanced kita nantinya akan gunakan JavaSript.
+
+
+Validasi artinya adalah suatu aturan yang harus terpenuhi.
+
+Pertama, atribut `required`. Atribut ini kita gunakan memastikan bahwa user mengisi form input tersebut. Contohnya, `<input name="username" type="text" required>`. Atribut ini sedikit unik dimana kita tidak harus memberikan nilainya.
+
+Kedua, tipe input; `email`. Memastikan bahwa kita memasukkan email dengan format yang benar. `<input name="email" type="email">`.
+
+#### More on Inputs!
+Input lainnya, adalah radio button dan checkbox.
+```html
+<input type="radio">
+<input type="checkbox">
+```
+Bedanya, biasanya radio button hanya bisa memilih satu opsi dari pilihan yang ada, contohnya memilih gender laki-laki atau perempuan. Sedangkan, checkbox layaknya checklist kita bisa memberikan checklist pada banyak opsi, misalnya bidang olahraga yang kita sukai, darimana sumber informasi suatu iklan didapat, dan sebagainya.
+
+Ketika kita memiliki sejumlah radio button misalnya:
+```html
+<form>
+	<input type="radio">
+	<input type="radio">
+	<input type="radio">
+</form>
+```
+Maka kita bisa memilih dari dari satu pilihan, padahal tidak demikian yang diharapkan. Untuk itu, kita harus berikan atribut `name` memastikan bahwa radio button tersebut merupakan suatu pilihan yang sama. Jadi atribut `name` tidak hanya sebagai variable pada HTTP Request, melainkan juga bisa untuk mengelompokkan pilihan yang sama atau berhubungan. Berlaku juga untuk checkbox.
+
+Akan tetapi, ada satu hal lagi yang perlu kita tambahkan, yaitu atribut `value` dimana jika tidak kita tetapkan, maka nilai dari data radio button tadi akan jadi `On`.
+
+```html
+<h3>Mau Internship di HeroCode? Kami Dengan Senang Hati Menyambut Kamu!</h3>
+<p>Silahkan pilih role yang kamu sukai.</p>
+<form>
+	<label>
+		<input name="roles" type="radio" value="Web Developer">
+		Web Developer
+	</label>
+	<label>
+		<input name="roles" type="radio" value="Business Analyst">
+		Business Analyst
+	</label>
+	<label>
+		<input name="roles" type="radio" value="Content Writer">
+		Content Writer
+	</label>
+	<label>
+		<input name="roles" type="radio" value="Graphic Designer">
+		Graphic Designer
+	</label>
+
+	<button>Go! Apply!</button>
+
+</form>
+```
+
+Sebagai tambahan bahwa jika `<button>` adalah element terakhir dari suatu form, maka ia akan menjadi submit form.
+

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intermediate HTML</title>
+</head>
+<body>
+  <h1>Intermediate HTML</h1>
+  <p>Kita akan belajar lebih lanjut HTML disini, yaitu Table dan Form. Siapkan dirimu!</p>
+
+  <h2>Belajar HTML Table</h2>
+	
+	<h3>Daftar Setup</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Harga</th>
+        <th>Deskripsi</th>
+        <th>Gambar</th>
+        <th>Link Pembelian</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr>
+        <td>Mic Alctron UM270</td>
+        <td>IDR 1,100,000</td>
+        <td>Condenser Microphone</td>
+        <td><img src="http://www.alctron-audio.com/English/upload/images/products/microphones/UM270/5102111745.jpg" alt="Mic Alctron UM270" width=100></td>
+				<td>
+					<a href="https://shopee.co.id/USB-Condenser-Mic-Microphone-ALCTRON-UM270-Professional-For-Karaoke-And-Recording-i.1644940.216198831">Beli Disini</a>
+				</td>
+      </tr>
+  
+      <tr>
+        <td>Corel VideoStudio Ultimate X9</td>
+        <td>IDR 650,000</td>
+        <td>Video Editing Software</td>
+        <td>
+          <img src="https://www.bhphotovideo.com/images/images2000x2000/corel_vsprx9ulmlmbam_videostudio_x9_ultimate_boxed_1223568.jpg" alt="Corel VideoStudio Ultimate X9" width=100>
+        </td>
+        <td>
+        	<a href="https://www.videostudiopro.com/en/pages/videostudio-x9/">Beli Disini</a>
+        </td>
+      </tr>
+  
+      <tr>
+        <td>Meja IKEA LINNMON</td>
+        <td>IDR 500,000</td>
+        <td>Meja Setup Minimalis</td>
+        <td>
+          <img src="https://www.ikea.com/id/in/images/products/linnmon-adils-meja__0189130_PE343590_S4.JPG" alt="Meja IKEA LINNMON" width=100>
+				</td>
+				<nav>
+					<ul>
+						<li></li>
+					</ul>
+				</nav>
+        <td>
+          <a href="https://shopee.co.id/IKEA-LINNMON---ADILS-Meja-100x60-cm--Putih-i.6547681.38714757?gclid=Cj0KCQjw3InYBRCLARIsAG6bfMQNQS5ngX5mAmm831Tu9xeLs2rGpfA4_SgZnflyhAs9u6CRDZKexOQaAo52EALw_wcB">Beli Disini</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Tanaman Rumput Tiruan IKEA</td>
+        <td>IDR 50,000</td>
+        <td>Tanaman Hias</td>
+        <td>
+          <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2017/3/3/1901741/1901741_fe86c5e0-7049-4efa-8469-1f7c202a80fd.jpg" alt="IKEA Tanaman Rumput Tiruan" width=100>
+        </td>
+        <td>
+          <a href="https://www.tokopedia.com/ikeaone/ikea-fejka-tanaman-rumput-tiruan-dalam-pot-bunga-plastik-artificial?trkid=f=Ca0000L000P0W0S0Sh00Co0Po0Fr0Cb0_src=search_page=1_ob=23_q=IKEA+Fejka_catid=1271_po=2&utm_source=Optimise+Media+(SEA)+Pte.+Ltd&utm_medium=w2N4e26g&utm_campaign=">Beli Disini</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h2>Belajar HTML Forms</h2>
+	
+	<h3>Daftar Gratis Sekarang!</h3>
+	
+	<form>
+		<input name="username" type="text" placeholder="Username">
+		<input name="email" type="email" placeholder="Alamat Email">
+		<input name="password" type="password" placeholder="Password">
+		<input type="submit" value="Daftar">
+	</form>
+	
+	<h3>Sign In</h3>
+	<form>
+		<label>
+			Username:
+			<input name="username" type="text">
+		</label>
+		<br>
+		<label>
+			Password:
+			<input name="password" type="password">
+		</label>
+		<br>
+		<button type="submit">Sign in</button>
+	</form>
+	
+	<h3>Sign In</h3>
+	<form>
+		<label for="username">Username</label>
+		<input id="username" type="text">
+		<br>
+		<label for="password">Username</label>
+		<input id="password" type="password">
+		<br>
+		<input type="submit">
+	</form>
+	
+	<h3>Mau Internship di HeroCode? Kami Dengan Senang Hati Menyambut Kamu!</h3>
+	<p>Silahkan pilih role yang kamu sukai.</p>
+	<form>
+		<label>
+			<input name="roles" type="radio" value="Web Developer">
+			Web Developer
+		</label>
+		<label>
+			<input name="roles" type="radio" value="Business Analyst">
+			Business Analyst
+		</label>
+		<label>
+			<input name="roles" type="radio" value="Content Writer">
+			Content Writer
+		</label>
+		<label>
+			<input name="roles" type="radio" value="Graphic Designer">
+			Graphic Designer
+		</label>
+		
+		<p>Darimana Kamu Menemukan Informasi Ini?</p>
+		<label>
+			<input name="infoDari" type="checkbox" value="Sosial Media">
+			Sosial Media
+		</label>
+		<label>
+			<input name="infoDari" type="checkbox" value="Sosial Media">
+			Sosial Media
+		</label>
+		<label>
+			<input name="infoDari" type="checkbox" value="Teman/Kolega">
+			Teman/Kolega
+		</label>
+		<label>
+			<input name="infoDari" type="checkbox" value="Magazine/Newsletter">
+			Magazine/Newsletter
+		</label>
+		
+		<p>What's your current mood?</p>
+		
+		<select name="mood">
+			<option value="happy">:)</option>
+			<option value="neutral">:|</option>
+			<option value="sad">:(</option>
+		</select>
+		
+		<p>Berikan Saranmu</p>
+		<textarea name="saran" rows="10" cols="30"></textarea>
+		<br>
+		
+		<button>Go! Apply!</button>
+		
+	</form>
+
+</body>
+</html>
+
